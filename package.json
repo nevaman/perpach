@@ -1,0 +1,1 @@
+{"scripts":{"build":"node scripts/build.mjs","test":"node --test tests/site.test.mjs","serve":"npx serve dist -l 4173"},"devDependencies":{"serve":"^14.2.4"}}

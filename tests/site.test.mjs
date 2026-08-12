@@ -1,0 +1,4 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {readFile,access} from 'node:fs/promises';import {pages} from '../src/content.mjs';
+test('all public pages build with canonical metadata',async()=>{for(const p of pages){const f=`dist/mining/${p.slug}/index.html`;await access(f);const html=await readFile(f,'utf8');assert.match(html,/rel="canonical"/);assert.match(html,/<main id="content">/);assert.doesNotMatch(html,/Invest Now|Guaranteed Return|Buy Shares/)}});
+test('root redirect is temporary and scoped',async()=>{assert.equal(await readFile('dist/_redirects','utf8'),'/ /mining 307\n')});
+test('investor route and controlled language exist',async()=>{const html=await readFile('dist/mining/investor/index.html','utf8');assert.match(html,/Request the investor brief/);assert.match(html,/not an offer to sell securities/i)});

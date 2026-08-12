@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /mining
+Sitemap: https://perpach.com/sitemap.xml
