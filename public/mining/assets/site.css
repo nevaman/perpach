@@ -44,8 +44,8 @@ nav a:hover,nav a[aria-current]{color:#8c6b0b}nav a:hover::after,nav a[aria-curr
 
 /* ===== HOME HERO ===== */
 .hero-home{min-height:100vh;display:grid;grid-template-columns:1fr 400px;align-items:end;padding:0 7vw 5rem;background-size:cover;background-position:center 30%;position:relative;overflow:hidden}
-.hero-home-overlay{position:absolute;inset:0;background:linear-gradient(165deg,rgba(9,43,32,.82) 0%,rgba(9,43,32,.55) 45%,rgba(9,43,32,.25) 100%);z-index:1}
-.hero-home-content{position:relative;z-index:2;padding-bottom:4rem}
+.hero-home-overlay{position:absolute;inset:0;background:linear-gradient(165deg,rgba(9,43,32,.82) 0%,rgba(9,43,32,.55) 45%,rgba(9,43,32,.25) 100%);z-index:1;pointer-events:none}
+.hero-home-content{position:relative;z-index:2;padding-bottom:4rem;grid-column:1;grid-row:1}
 .hero-home h1{font:600 clamp(3.6rem,6.5vw,6.8rem)/.92 'Manrope';letter-spacing:-.06em;color:#fff;margin:1.4rem 0 2rem;max-width:800px}
 .hero-home h1 em{font-style:normal;color:var(--gold)}
 .hero-home p{max-width:520px;font-size:17px;color:rgba(255,255,255,.75);line-height:1.75}
@@ -55,7 +55,7 @@ nav a:hover,nav a[aria-current]{color:#8c6b0b}nav a:hover::after,nav a[aria-curr
 .ghost-btn{display:inline-flex;align-items:center;gap:.8rem;color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,.3);padding:.85rem 1.4rem;font-weight:500;transition:all .3s var(--ease)}
 .ghost-btn:hover{border-color:var(--gold);background:rgba(255,255,255,.06)}
 .ghost-btn span{transition:transform .3s var(--ease)}.ghost-btn:hover span{transform:translateX(4px)}
-.hero-home-aside{position:relative;z-index:2;display:flex;flex-direction:column;align-items:flex-end;justify-content:flex-end;padding-bottom:4rem;gap:2rem}
+.hero-home-aside{position:relative;z-index:2;display:flex;flex-direction:column;align-items:flex-end;justify-content:flex-end;padding-bottom:4rem;gap:2rem;grid-column:2;grid-row:1}
 .hero-badge{text-align:right;color:#fff}
 .hero-badge span{font:600 9px/1 'DM Sans';letter-spacing:2.5px;color:var(--gold);display:block;margin-bottom:.5rem}
 .hero-badge b{font:600 42px/1 'Manrope';letter-spacing:-.03em;display:block}
@@ -67,6 +67,7 @@ nav a:hover,nav a[aria-current]{color:#8c6b0b}nav a:hover::after,nav a[aria-curr
 .hero-home-terrain i:nth-child(3){inset:30%;transform:rotate(-10deg);animation-delay:-12s}
 @keyframes topo-drift{0%{transform:rotate(-20deg) scale(1)}50%{transform:rotate(-15deg) scale(1.04)}100%{transform:rotate(-20deg) scale(1)}}
 .hero-home-scroll{position:absolute;bottom:2rem;left:7vw;z-index:2;font:600 9px/1 'DM Sans';letter-spacing:2.5px;color:rgba(255,255,255,.45);animation:scroll-bob 2.5s ease-in-out infinite}
+.hero-home .hero-home-scroll{grid-column:1/-1}
 @keyframes scroll-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
 
 /* ===== INTRO STRIP ===== */
